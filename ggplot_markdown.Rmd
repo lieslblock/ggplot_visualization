@@ -1,0 +1,33 @@
+---
+title: "Visualization with ggplot2"
+output: html_document
+---
+
+### How to utilize R package ggplot2 to create data visualizations:
+Inspired by [this](https://www.r-bloggers.com/data-visualization-in-r-using-ggplot2/) blog post.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## What is ggplot2?
+_ggplot2_ is a package that can be installed in R to create _visualizations_ out of given _data_.  The idea for ggplot2 originated out of the concept of separating plots into three separate parts:
+* data
+* aesthetics
+* geometry
+
+## What kinds of visualizations?
+Some examples of plots you can create with ggplot2 include scatter plots, line plots, bar charts, histograms, box plots, or pie charts.  Each of these kinds of visualizations contain their own functions such as, but not limited to, *geom_point()*, *geom_line()*, and *coord_polar()*.
+
+## Example:
+Utilizing the _iris_ dataset available in R, we will create a histogram that graphs the sepal width of each species of flower.  Before even creating the plot, you need to install the package (only once) and load it in each script it is needed.  Once the library is loaded you can begin using ggplot() and filling in the function with the necessary _data_, _aesthetics_, and _geometry_.
+
+```{r histogram}
+library(ggplot2)
+
+ggplot(iris, aes(x=Sepal.Length, color=Species)) + 
+geom_histogram(fill="white", binwidth = 1)
+```
+
+## For more help:
+For more information, take a look at [this](https://ggplot2.tidyverse.org/) website.
